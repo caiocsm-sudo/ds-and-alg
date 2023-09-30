@@ -37,6 +37,10 @@ class Stack {
     return this;
   }
 
+  size() {
+    return this.length;
+  }
+
   peek() {
     console.log(this.stack[this.length - 1]);
     return this.stack[this.length - 1];
