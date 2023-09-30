@@ -16,6 +16,8 @@ if (word === rword) {
   console.log('this word is not a palindrome: ' + word + ' ' + rword);
 }
 
+// Stack Class --------------------------------------------------------
+
 class Stack {
   constructor() {
     this.stack = {};
