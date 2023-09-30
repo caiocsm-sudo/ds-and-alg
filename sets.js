@@ -70,24 +70,33 @@ const mySet = function () {
     });
     return differenceSet;
   };
+
+  this.subset = function (otherSet) {
+    let firstSet = this.values();
+    return firstSet.every((e) => {
+      return otherSet.has(e);
+    });
+  };
 };
 
 const mset = new mySet();
 const myOtherSet = new mySet();
 
-mset.add('a');
-mset.add('e');
-mset.add('s');
-myOtherSet.add('a');
-myOtherSet.add('o');
-myOtherSet.add('d');
-myOtherSet.add('b');
+mset.add("a");
+mset.add("e");
+mset.add("s");
+myOtherSet.add("a");
+myOtherSet.add("o");
+myOtherSet.add("d");
+myOtherSet.add("b");
 
 let intersection = mset.intersection(myOtherSet);
 let difference = mset.difference(myOtherSet);
 
 console.log(intersection.values());
 console.log(difference.values());
+console.log(mset.subset(myOtherSet));
+console.log(mset.values());
 
 console.log(mset.has("bushcraft"));
 console.log(mset.size());
